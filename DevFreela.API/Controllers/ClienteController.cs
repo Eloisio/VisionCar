@@ -30,7 +30,7 @@ namespace VisionCar.API.Controllers
             return NoContent();
         }
 
-        // api/Cliente/Empresa/1
+        // api/Cliente/1
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -45,8 +45,20 @@ namespace VisionCar.API.Controllers
 
             return Ok(cliente);
         }
+        // api/empresa/Cliente/empresa/1
+        [HttpGet("empresa/{idEmpresa}/{placa}")]
+        public async Task<IActionResult> GetByplaca(int idEmpresa,string placa)
+        {
+            var query = new Application.Queries.QueriesCliente.GetClienteQueryByplaca(idEmpresa,placa);
+            var cliente = await _mediator.Send(query);
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+            return Ok(cliente);
+        }
         // api/Cliente/1
-        [HttpGet("empresa/{idEmpresa}")]
+        [HttpGet("placa/{id}")]
         public async Task<IActionResult> GetByIdEmpresa(int idEmpresa)
         {
             var query = new Application.Queries.QueriesCliente.GetClienteQuery(idEmpresa);

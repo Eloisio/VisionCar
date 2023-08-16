@@ -23,7 +23,7 @@ namespace VisionCar.Application.Commands._Empresa
         {
             var venda = await _VendaRepository.GetByIdAsync(request.Id);
 
-            venda.Update(request.Id, request.IdEmpresa, request.IdCliente, request.Valor,request.Caixinha,request.Inicio,request.Fim,request.Data,request.Pago,request.AvisarCliente,request.Excluido,request.Observacao);
+            venda.Update(request.Id, request.IdEmpresa, request.IdCliente, request.Valor,request.Caixinha,request.Inicio,request.Fim,request.Data,request.Pago,request.AvisarCliente,request.Excluido,request.Observacao, request.Descricao,request.TipoPgto);
 
             await _VendaRepository.SaveChangesAsync();
 

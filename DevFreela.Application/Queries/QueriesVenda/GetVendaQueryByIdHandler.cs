@@ -29,7 +29,7 @@ namespace VisionCar.Application.Queries.QueriesVenda
             {
                 return null;
             }
-            var vendaViewModel = new VendaViewModel(venda.Id, venda.IdEmpresa, venda.IdCliente, venda.Valor, venda.Caixinha, venda.Inicio, venda.Fim, venda.Data, venda.Pago, venda.AvisarCliente, venda.Excluido, venda.Observacao);
+            var vendaViewModel = new VendaViewModel(venda.Id, venda.IdEmpresa, venda.IdCliente, venda.Valor, venda.Caixinha, venda.Inicio, venda.Fim, venda.Data, venda.Pago, venda.AvisarCliente, venda.Excluido, venda.Observacao, venda.Descricao, venda.TipoPgto);//,venda.TipoPgto);
 
             return vendaViewModel;
         }

@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using System;
 
-namespace VisionCar.Application.Commands.CreateCliente
+namespace VisionCar.Application.Commands._Venda
 {
     public class CreateVendaCommand : IRequest<int>
     {
@@ -17,5 +17,7 @@ namespace VisionCar.Application.Commands.CreateCliente
         public bool AvisarCliente { get; set; }
         public bool Excluido { get; set; }
         public string Observacao { get; set; }
+        public string Descricao { get; set; }
+        public string TipoPgto { get; set; }
     }
 }

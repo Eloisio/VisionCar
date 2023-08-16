@@ -19,7 +19,9 @@ namespace VisionCar.Core.Entities
          , bool avisarCliente
          , bool excluido
          , string observacao
-)
+         , string descricao
+         , string tipopgto
+            )
         {
             Id = id;
             IdEmpresa = idEmpresa;
@@ -33,6 +35,8 @@ namespace VisionCar.Core.Entities
             AvisarCliente = avisarCliente;
             Excluido = excluido;
             Observacao = observacao;
+            Descricao = descricao;
+            TipoPgto = tipopgto;
         }
 
         public int Id { get; set; }
@@ -47,6 +51,8 @@ namespace VisionCar.Core.Entities
         public bool AvisarCliente { get; set; }
         public bool Excluido { get; set; }
         public string Observacao { get; set; }
+        public string Descricao { get; set; }
+        public string TipoPgto { get; set; }
         public void Update(int id
          , int idEmpresa
          , int idCliente
@@ -58,7 +64,9 @@ namespace VisionCar.Core.Entities
          , bool pago
          , bool avisarCliente
          , bool excluido
-         , string observacao)
+         , string observacao
+         , string descricao
+         , string tipopgto)
         {
             Id = id;
             IdEmpresa = idEmpresa;
@@ -72,6 +80,8 @@ namespace VisionCar.Core.Entities
             AvisarCliente = avisarCliente;
             Excluido = excluido;
             Observacao = observacao;
+            Descricao = descricao;
+            TipoPgto = tipopgto;
         }
     }
 }

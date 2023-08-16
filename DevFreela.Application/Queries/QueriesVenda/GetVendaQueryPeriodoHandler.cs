@@ -34,7 +34,7 @@ namespace VisionCar.Application.Queries.QueriesVenda
             }
 
             var vendaViewModel = venda
-                .Select(p => new VendaViewModel(p.Id, p.IdEmpresa, p.IdCliente, p.Valor, p.Caixinha, p.Inicio, p.Fim, p.Data, p.Pago, p.AvisarCliente, p.Excluido, p.Observacao))
+                .Select(p => new VendaViewModel(p.Id, p.IdEmpresa, p.IdCliente, p.Valor, p.Caixinha, p.Inicio, p.Fim, p.Data, p.Pago, p.AvisarCliente, p.Excluido, p.Observacao, p.Descricao, p.TipoPgto))
                 .ToList();
 
             return vendaViewModel;

@@ -9,7 +9,7 @@ namespace VisionCar.Application.ViewModels
     public class VendaViewModel
     {
         public VendaViewModel(int id,int idEmpresa,int idCliente, decimal valor, decimal caixinha, DateTime inicio, 
-            DateTime fim, DateTime data, bool pago, bool avisarCliente, bool excluido,string observacao)
+            DateTime fim, DateTime data, bool pago, bool avisarCliente, bool excluido,string observacao,string descricao,string tipopgto)
         {
             Id = id;
             IdEmpresa = idEmpresa;
@@ -23,6 +23,8 @@ namespace VisionCar.Application.ViewModels
             AvisarCliente = avisarCliente;
             Excluido = excluido;
             Observacao = observacao;
+            Descricao = descricao;
+            TipoPgto = tipopgto;
         }
         public int Id { get; set; }
         public int IdEmpresa { get; set; }
@@ -36,5 +38,7 @@ namespace VisionCar.Application.ViewModels
         public bool AvisarCliente { get; set; }
         public bool Excluido { get; set; }
         public string Observacao { get; set; }
+        public string Descricao { get; set; }
+        public string TipoPgto { get; set; }
     }
 }

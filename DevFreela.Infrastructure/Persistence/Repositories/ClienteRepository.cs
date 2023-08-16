@@ -32,7 +32,11 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
         {
             return await _dbContext.Cliente.Where(c => c.IdEmpresa == idEmpresa).ToListAsync();
         }
+        async Task<List<Cliente>> IClienteRepository.GetPlacaAsync(int idEmpresa,string placa)
+        {
 
+            return await _dbContext.Cliente.Where(c => c.IdEmpresa == idEmpresa &&  c.Placa == placa).ToListAsync();
+        }
         async Task<Cliente> IClienteRepository.GetByIdAsync(int id)
         {
             return await _dbContext.Cliente.SingleOrDefaultAsync(p => p.Id == id);

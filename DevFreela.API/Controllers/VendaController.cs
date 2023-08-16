@@ -7,6 +7,7 @@ using VisionCar.Application.Commands._Ciente;
 using VisionCar.Application.Commands._Produto;
 using VisionCar.Application.Commands._Empresa;
 using VisionCar.Application.Commands.CreateCliente;
+using VisionCar.Application.Commands._Venda;
 
 namespace VisionCar.API.Controllers
 {
@@ -31,7 +32,7 @@ namespace VisionCar.API.Controllers
             return NoContent();
         }
 
-        // api/Venda/Empresa/1
+        // api/Venda/1
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -46,7 +47,7 @@ namespace VisionCar.API.Controllers
 
             return Ok(cliente);
         }
-        // api/Venda/1
+        // api/Venda/Empresa/1
         [HttpGet("Empresa/{idEmpresa}")]
         public async Task<IActionResult> GetByIdEmpresa(int idEmpresa)
         {

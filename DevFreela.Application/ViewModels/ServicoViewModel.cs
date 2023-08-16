@@ -5,7 +5,7 @@
         public ServicoViewModel(int id, int idEmpresa, string descricao, decimal preco, bool aivo)
         {
             Id = id;
-            Id=idEmpresa;
+            IdEmpresa = idEmpresa;
             Descricao = descricao;
             Preco= preco;
             Ativo= aivo;

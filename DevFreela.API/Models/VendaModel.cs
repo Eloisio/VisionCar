@@ -18,6 +18,8 @@ namespace VisionCar.API.Models
         public bool Pago { get; set; }
         public bool AvisarCliente { get; set; }
         public bool Excluido { get; set; }
-        public string  Observacao { get; set; }
+        public string Observacao { get; set; }
+        public string Descricao { get; set; }
+        public string TipoPgto { get; set; }
     }
 }
