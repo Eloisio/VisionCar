@@ -12,7 +12,7 @@ namespace VisionCar.Application.ViewModels
             IdEmpresa = idEmpresa;
             Nome = nome;
             Email = email;
-            Senha = email;
+            Senha = senha;
             Data_add = data_add;
             Ativo = ativo;
             Master = master;
