@@ -10,7 +10,9 @@ namespace VisionCar.Core.Repositories
     {
         Task AddAsync(User user);
         Task<List<User>> GetAllAsync();
-        Task<User> GetByIdAsync( int id);
+        //Task<List<User>> GetAllempresaAsync(int id);
+        Task<User> GetByIdAsync(int id);
+        Task<User> GetByemailAsync(string email);
         Task DeleteAsync(User user);
         Task SaveChangesAsync();
 

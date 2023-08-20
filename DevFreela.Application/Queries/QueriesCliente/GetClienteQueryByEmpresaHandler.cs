@@ -5,26 +5,26 @@ using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 using VisionCar.Core.Repositories;
-using System.Linq;
 using System.Collections.Generic;
+using VisionCar.Core.Entities;
+using System.Linq;
 
 namespace VisionCar.Application.Queries.QueriesCliente
 {
-    public class GetClienteQueryByplacaHandler : IRequestHandler<GetClienteQueryByplaca, List<ClienteViewModel>>
+    public class GetClienteQueryByEmpresaHandler : IRequestHandler<GetClienteQueryByEmpresa, List<ClienteViewModel>>
     {
         private readonly IClienteRepository _clienteRepository;
-        public GetClienteQueryByplacaHandler(IClienteRepository clienterepository)
+        public GetClienteQueryByEmpresaHandler(IClienteRepository clienterepository)
         {
             _clienteRepository = clienterepository;
         }
 
-        public async Task<List<ClienteViewModel>> Handle(GetClienteQueryByplaca request, CancellationToken cancellationToken)
+        public async Task<List<ClienteViewModel>> Handle(GetClienteQueryByEmpresa request, CancellationToken cancellationToken)
         {
-           var cliente = await _clienteRepository.GetPlacaAsync(request.IdEmpresa,request.Placa);
+            var cliente = await _clienteRepository.GetAllAsync(request.IdEmpresa);
 
             var empresaViewModel = cliente
                         .Where(p => p.IdEmpresa == request.IdEmpresa)
-                        .Where(p => p.Placa == request.Placa)
                         .Select(p => new ClienteViewModel(p.Id, p.IdEmpresa, p.Nome, p.Placa, p.Celular, p.TipoVeiculo, p.Data_add, p.Ativo))
                         .ToList();
 

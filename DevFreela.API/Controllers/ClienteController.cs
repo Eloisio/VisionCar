@@ -6,6 +6,7 @@ using VisionCar.Application.Commands.CreateCliente;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
 using VisionCar.Application.Commands._Ciente;
+using VisionCar.Application.Commands._User;
 
 namespace VisionCar.API.Controllers
 {
@@ -46,6 +47,18 @@ namespace VisionCar.API.Controllers
             return Ok(cliente);
         }
         // api/empresa/Cliente/empresa/1
+        [HttpGet("empresa/{idEmpresa}")]
+        public async Task<IActionResult> GetByEmpresa(int idEmpresa)
+        {
+            var query = new Application.Queries.QueriesCliente.GetClienteQueryByEmpresa(idEmpresa);
+            var cliente = await _mediator.Send(query);
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+            return Ok(cliente);
+        }
+
         [HttpGet("empresa/{idEmpresa}/{placa}")]
         public async Task<IActionResult> GetByplaca(int idEmpresa,string placa)
         {
@@ -57,27 +70,19 @@ namespace VisionCar.API.Controllers
             }
             return Ok(cliente);
         }
-        // api/Cliente/1
-        [HttpGet("placa/{id}")]
-        public async Task<IActionResult> GetByIdEmpresa(int idEmpresa)
-        {
-            var query = new Application.Queries.QueriesCliente.GetClienteQuery(idEmpresa);
 
-            var cliente = await _mediator.Send(query);
-
-            if (cliente == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(cliente);
-        }
         // api/Cliente
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateClienteCommand command)
         {
             var id = await _mediator.Send(command);
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
+        }
+        [HttpPut()]
+        public async Task<IActionResult> Put(int id, [FromBody] UpdateClienteCommand command)
+        {
+            await _mediator.Send(command);
+            return Ok();
         }
     }
 }

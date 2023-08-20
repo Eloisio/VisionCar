@@ -1,9 +1,11 @@
 ﻿using MediatR;
 using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace VisionCar.Application.Commands.CreateUser
+namespace VisionCar.Application.Commands._User
 {
-    public class CreateUserCommand : IRequest<int>
+    public class UpdateUsersSenhaCommand : IRequest<Unit>
     {
         public int id { get; set; }
         public int idEmpresa { get; set; }

@@ -12,8 +12,8 @@ namespace VisionCar.Application.ViewModels
             IdEmpresa = idEmpresa;
             Nome = nome;
             Placa = placa;
-            Celular = Celular;
-            TipoVeiculo = TipoVeiculo;
+            Celular = celular;
+            TipoVeiculo = tipoVeiculo;
             Data_add = data_add;
             Ativo = ativo;
         }

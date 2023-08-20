@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VisionCar.Infrastructure.Persistence;
 
-namespace VisionCar.Infrastructure.persistence.Migrations
+namespace VisionCar.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(VisionCarDbContext))]
-    [Migration("20230808134657_iniciomigration")]
-    partial class iniciomigration
+    [Migration("20230818140855_newmigration")]
+    partial class newmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -78,6 +78,54 @@ namespace VisionCar.Infrastructure.persistence.Migrations
                     b.ToTable("Empresa");
                 });
 
+            modelBuilder.Entity("VisionCar.Core.Entities.Produto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IdEmpresa")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Preco")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Produto");
+                });
+
+            modelBuilder.Entity("VisionCar.Core.Entities.Servico", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IdEmpresa")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Preco")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Servico");
+                });
+
             modelBuilder.Entity("VisionCar.Core.Entities.User", b =>
                 {
                     b.Property<int>("Id")
@@ -126,6 +174,9 @@ namespace VisionCar.Infrastructure.persistence.Migrations
 
                     b.Property<DateTime>("Data")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Excluido")
                         .HasColumnType("bit");

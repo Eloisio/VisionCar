@@ -20,6 +20,5 @@ namespace VisionCar.Application.Commands._Empresa
         public bool Excluido { get; set; }
         public string Observacao { get; set; }
         public string Descricao { get; set; }
-        public string TipoPgto { get; set; }
     }
 }

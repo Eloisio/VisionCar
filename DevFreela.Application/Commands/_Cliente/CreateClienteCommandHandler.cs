@@ -11,7 +11,7 @@ using System;
 using VisionCar.Application.Commands._Servico;
 using DevFreela.Infrastructure.Persistence.Repositories;
 
-namespace VisionCar.Application.Commands.CreateUser
+namespace VisionCar.Application.Commands.User
 {
     public class CreateClienteCommandHandler : IRequestHandler<CreateClienteCommand, int>
     {

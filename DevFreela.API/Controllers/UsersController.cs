@@ -2,8 +2,10 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using VisionCar.Application.Commands.CreateUser;
+using VisionCar.Application.Commands.User;
 using VisionCar.Application.Queries.QueriesUser;
+using VisionCar.Core.Entities;
+using VisionCar.Application.Commands._User;
 
 namespace VisionCar.API.Controllers
 {
@@ -33,20 +35,65 @@ namespace VisionCar.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateUserCommand command)
         {
-            command.Master = true;
             command.ativo = true;
             command.data_add = System.DateTime.Now;
-            command.idEmpresa = 1;
             var id = await _mediator.Send(command);
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
 
         // api/users/1/login
-        [HttpPut("{id}/login")]
-        public IActionResult Login(int id, [FromBody] UserModel login)
+        [HttpGet("login/{email}")]
+        public async Task<IActionResult> GetByEmail(string email)
         {
-            // TODO: Para Módulo de Autenticação e Autorização
+            var query = new Application.Queries.QueriesUser.GetUseremailQuery(email);
 
+            var user = await _mediator.Send(query);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
+
+        }
+        //api/users/1/login
+        [HttpGet("Empresa/{id}")]
+        public async Task<IActionResult> get(int id)
+        {
+            var query = new Application.Queries.QueriesUser.GetUserEmpresaQuery(id);
+
+            var user = await _mediator.Send(query);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
+
+        }
+        // api/user/2
+        [HttpPut()]
+        public async Task<IActionResult> Put(int id, [FromBody] UpdateUsersCommand command)
+        {
+            await _mediator.Send(command);
+            return Ok();
+        }
+
+        // api/user/2
+        [HttpPut("/Ativo")]
+        public async Task<IActionResult> Put(int id, [FromBody] UpdateUsersAtivoCommand command)
+        {
+            await _mediator.Send(command);
+            return Ok();
+        }
+
+        // api/user/2
+        [HttpPut("/Senha/{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] UpdateUsersSenhaCommand command)
+        {
+            await _mediator.Send(command);
             return NoContent();
         }
     }

@@ -4,7 +4,7 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace VisionCar.Application.Commands.CreateUser
+namespace VisionCar.Application.Commands._User
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, int>
     {
@@ -16,7 +16,7 @@ namespace VisionCar.Application.Commands.CreateUser
 
         public async Task<int> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
-            var user = new User(request.id,request.idEmpresa ,request.nome, request.email,request.senha,request.data_add,request.ativo,request.Master);
+            var user = new VisionCar.Core.Entities.User(request.id,request.idEmpresa ,request.nome, request.email,request.senha,request.data_add,request.ativo,request.Master);
 
             await _dbContext.Users.AddAsync(user);
             await _dbContext.SaveChangesAsync();

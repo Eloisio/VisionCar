@@ -38,6 +38,7 @@ namespace VisionCar.API
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IServicoRepository, ServicoRepository>();
             services.AddScoped<IVendaRepository, VendaRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddControllers();
             services.AddMediatR(typeof(CreateEmpresaCommand));
             services.AddCors(options =>

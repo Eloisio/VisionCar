@@ -10,8 +10,8 @@ namespace VisionCar.Core.Entities
             IdEmpresa = idEmpresa;
             Nome = nome;
             Placa = placa;
-            Celular = Celular;
-            TipoVeiculo = TipoVeiculo;
+            Celular = celular;
+            TipoVeiculo = tipoVeiculo;
             Data_add = DateTime.Now;
             Ativo = ativo;
         }
@@ -31,8 +31,8 @@ namespace VisionCar.Core.Entities
             IdEmpresa = idEmpresa;
             Nome = nome;
             Placa = placa;
-            Celular = Celular;
-            TipoVeiculo = TipoVeiculo;
+            Celular = celular;
+            TipoVeiculo = tipoVeiculo;
             Data_add = DateTime.Now;
             Ativo = ativo;
         }

@@ -2,9 +2,11 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using VisionCar.Application.Commands.CreateUser;
+using VisionCar.Application.Commands.User;
 using VisionCar.Application.Queries.QueriesServico;
 using VisionCar.Application.Commands._Servico;
+using VisionCar.Application.Commands._User;
+using VisionCar.Application.Commands._Produto;
 
 namespace VisionCar.API.Controllers
 {
@@ -66,6 +68,13 @@ namespace VisionCar.API.Controllers
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
 
+        // api/user/2
+        [HttpPut()]
+        public async Task<IActionResult> Put( [FromBody] UpdateServicoCommand command)
+        {
+            await _mediator.Send(command);
+            return Ok();
+        }
 
     }
 }

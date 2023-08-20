@@ -16,8 +16,4 @@
     <ProjectReference Include="..\DevFreela.Core\VisionCar.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Persistence\Migrations\" />
-  </ItemGroup>
-
 </Project>

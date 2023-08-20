@@ -1,6 +1,8 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VisionCar.Core.Entities;
@@ -17,29 +19,40 @@ namespace VisionCar.Infrastructure.Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        Task IUserRepository.AddAsync(User user)
+        public async Task<User> GetByemailAsync(string email)
         {
             throw new NotImplementedException();
         }
 
-        Task IUserRepository.DeleteAsync(User user)
+        public async Task<List<User>> GetByEmpresaAsync(int IdEmpresa)
+        {
+            return await _dbContext.Users.Where(c => c.IdEmpresa == IdEmpresa).ToListAsync();
+        }
+
+        public async Task AddAsync(User user)
+        {
+            await _dbContext.Users.AddAsync(user);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(User user)
         {
             throw new NotImplementedException();
         }
 
-        Task<List<User>> IUserRepository.GetAllAsync()
+        public async Task<List<User>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _dbContext.Users.ToListAsync();
         }
 
-        Task<User> IUserRepository.GetByIdAsync(int id)
+        public async Task<User> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Users.SingleOrDefaultAsync(c => c.Id == id);
         }
 
-        Task IUserRepository.SaveChangesAsync()
+        public async Task SaveChangesAsync()
         {
-            throw new NotImplementedException();
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

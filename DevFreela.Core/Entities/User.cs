@@ -16,6 +16,10 @@ namespace VisionCar.Core.Entities
             Ativo = ativo;
             Master = master;
         }
+       public User()
+        {
+
+        }
 
         public int Id { get; set; }
         public int IdEmpresa { get; set; }
@@ -25,5 +29,21 @@ namespace VisionCar.Core.Entities
         public DateTime Data_add { get; set; }
         public bool Ativo { get; set; }
         public bool Master { get; set; }
+
+        public void Update(string nome, string email,bool ativo,string senha)
+        {
+            Nome = nome;
+            Email = email;
+            Ativo = ativo;
+            Senha= senha;
+        }
+        public void UpdateSenha(string senha)
+        {
+            Senha=senha;
+        }
+        public void Updateativo(bool ativo)
+        {
+            Ativo=ativo;
+        }
     }
 }
