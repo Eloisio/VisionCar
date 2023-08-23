@@ -94,7 +94,7 @@ namespace VisionCar.Infrastructure.Persistence.Migrations
                     b.Property<int>("IdEmpresa")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Preco")
+                    b.Property<string>("Preco")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
@@ -118,7 +118,7 @@ namespace VisionCar.Infrastructure.Persistence.Migrations
                     b.Property<int>("IdEmpresa")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Preco")
+                    b.Property<string>("Preco")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");

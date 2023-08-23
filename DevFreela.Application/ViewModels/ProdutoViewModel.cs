@@ -6,7 +6,7 @@ namespace VisionCar.Application.ViewModels
 {
     public class ProdutoViewModel
     {
-        public ProdutoViewModel(int id, int idEmpresa, string descricao, decimal preco, bool ativo)
+        public ProdutoViewModel(int id, int idEmpresa, string descricao, string preco, bool ativo)
         {
             Id = id;
             IdEmpresa = idEmpresa;
@@ -17,7 +17,7 @@ namespace VisionCar.Application.ViewModels
         public int Id { get; set; }
         public int IdEmpresa { get; set; }
         public string Descricao { get; set; }
-        public decimal Preco { get; set; }
+        public string Preco { get; set; }
         public bool Ativo { get; set; }
     }
 }

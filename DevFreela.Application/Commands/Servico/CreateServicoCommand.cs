@@ -10,7 +10,7 @@ namespace VisionCar.Application.Commands._Servico
         public int Id { get; set; }
         public int IdEmpresa { get; set; }
         public string Descricao { get; set; }
-        public decimal Preco { get; set; }
+        public string Preco { get; set; }
         public bool Ativo { get; set; }
     }
 }

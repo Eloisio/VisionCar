@@ -2,7 +2,7 @@
 {
     public class ServicoViewModel
     {
-        public ServicoViewModel(int id, int idEmpresa, string descricao, decimal preco, bool aivo)
+        public ServicoViewModel(int id, int idEmpresa, string descricao, string preco, bool aivo)
         {
             Id = id;
             IdEmpresa = idEmpresa;
@@ -15,7 +15,7 @@
         public int Id { get; set; }
         public int IdEmpresa { get; set; }
         public string Descricao { get; set; }
-        public decimal Preco { get; set; }
+        public string Preco { get; set; }
         public bool Ativo { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace VisionCar.Application.Commands._Produto
         public int id { get; set; }
         public int idEmpresa { get; set; }
         public string Descricao { get; set; }
-        public decimal Preco { get; set; }
+        public string Preco { get; set; }
         public bool ativo { get; set; }
     }
 }

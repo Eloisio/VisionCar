@@ -65,5 +65,14 @@ namespace VisionCar.API.Controllers
             var id = await _mediator.Send(command);
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
+
+        // api/user/2
+        [HttpPut()]
+        public async Task<IActionResult> Put([FromBody] UpdateProdutoCommand command)
+        {
+            await _mediator.Send(command);
+            return Ok();
+        }
+
     }
 }

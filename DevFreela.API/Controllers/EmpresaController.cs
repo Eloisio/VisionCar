@@ -52,8 +52,8 @@ namespace VisionCar.API.Controllers
         }
 
         // api/Empresa/2
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] UpdateEmpresaCommand command)
+        [HttpPut]
+        public async Task<IActionResult> Put( [FromBody] UpdateEmpresaCommand command)
         {
             await _mediator.Send(command);
             return NoContent();
