@@ -22,6 +22,7 @@ namespace VisionCar.Core.Entities
         public decimal Preco { get; set; }
         public bool Ativo { get; set; }
 
+
         public void Update(int id, int idEmpresa, string descricao, decimal preco, bool ativo)
         {
             Id = id;

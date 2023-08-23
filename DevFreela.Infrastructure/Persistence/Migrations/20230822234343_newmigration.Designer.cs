@@ -10,7 +10,7 @@ using VisionCar.Infrastructure.Persistence;
 namespace VisionCar.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(VisionCarDbContext))]
-    [Migration("20230818140855_newmigration")]
+    [Migration("20230822234343_newmigration")]
     partial class newmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

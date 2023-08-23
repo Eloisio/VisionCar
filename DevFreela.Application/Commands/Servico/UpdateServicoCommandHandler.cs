@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 using VisionCar.Core.Repositories;
 using VisionCar.Application.Commands._Empresa;
 using VisionCar.Core.Entities;
+using VisionCar.Application.Commands._Produto;
 
-namespace VisionCar.Application.Commands._Produto
+namespace VisionCar.Application.Commands._Servico
 {
     public class UpdateServicoCommandHandler : IRequestHandler<UpdateServicoCommand, Unit>
     {
