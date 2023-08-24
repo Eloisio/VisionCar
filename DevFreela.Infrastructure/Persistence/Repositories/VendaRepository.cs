@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,6 +24,11 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
         public Task DeleteAsync(Venda venda)
         {
             throw new System.NotImplementedException();
+        }
+
+        public async Task<List<Venda>> GetByDataAsync(int id, DateTime data)
+        {
+            return await _dbContext.Venda.Where(c => c.IdEmpresa == id && c.Data.Date==data.Date).ToListAsync();
         }
 
         public async Task<Venda> GetByIdAsync(int id)

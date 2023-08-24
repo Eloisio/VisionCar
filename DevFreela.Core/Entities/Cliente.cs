@@ -15,6 +15,10 @@ namespace VisionCar.Core.Entities
             Data_add = DateTime.Now;
             Ativo = ativo;
         }
+        public Cliente()
+        {
+
+        }
 
         public int Id { get; set; }
         public int IdEmpresa { get; set; }

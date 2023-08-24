@@ -14,13 +14,19 @@ namespace VisionCar.Core.Entities
             IdEmpresa = idEmpresa;
             Descricao= descricao;
             Preco = preco;
+
             Ativo = ativo;
+        }
+        public Produto()
+        {
+
         }
 
         public int Id { get; set; }
         public int IdEmpresa { get; set; }
         public string Descricao { get; set; }
         public string Preco { get; set; }
+
         public bool Ativo { get; set; }
 
 

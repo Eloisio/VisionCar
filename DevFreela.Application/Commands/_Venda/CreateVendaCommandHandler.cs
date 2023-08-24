@@ -22,7 +22,7 @@ namespace VisionCar.Application.Commands._Venda
 
         public async Task<int> Handle(CreateVendaCommand request, CancellationToken cancellationToken)
         {
-            var venda = new Venda(request.Id, request.IdEmpresa, request.IdCliente, request.Valor,  request.Caixinha,request.Inicio,request.Fim,request.Data,request.Pago,request.AvisarCliente,request.Excluido,request.Observacao,request.Descricao);
+            var venda = new Venda(request.Id, request.IdEmpresa, request.IdCliente, request.Valor,  request.Caixinha,request.Inicio,request.Fim,request.Data,request.Pago,request.AvisarCliente,request.Excluido,request.Observacao, request.Descricao, request.Placa);
 
             await _VendaRepository.AddAsync(venda);
             await _VendaRepository.SaveChangesAsync();

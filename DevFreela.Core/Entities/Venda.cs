@@ -6,6 +6,7 @@ namespace VisionCar.Core.Entities
 {
     public class Venda : BaseEntity
     {
+        public Venda(){}
         public Venda(
            int id
          , int idEmpresa
@@ -20,6 +21,7 @@ namespace VisionCar.Core.Entities
          , bool excluido
          , string observacao
          , string descricao
+            , string placa
             )
         {
             Id = id;
@@ -35,6 +37,7 @@ namespace VisionCar.Core.Entities
             Excluido = excluido;
             Observacao = observacao;
             Descricao = descricao;
+            Placa = placa;
         }
 
         public int Id { get; set; }
@@ -50,6 +53,7 @@ namespace VisionCar.Core.Entities
         public bool Excluido { get; set; }
         public string Observacao { get; set; }
         public string Descricao { get; set; }
+        public string Placa { get; set; }
         public void Update(int id
          , int idEmpresa
          , int idCliente
@@ -62,7 +66,7 @@ namespace VisionCar.Core.Entities
          , bool avisarCliente
          , bool excluido
          , string observacao
-         , string descricao)
+         , string descricao, string placa)
         {
             Id = id;
             IdEmpresa = idEmpresa;
@@ -77,6 +81,7 @@ namespace VisionCar.Core.Entities
             Excluido = excluido;
             Observacao = observacao;
             Descricao = descricao;
+            Placa = placa;
         }
     }
 }

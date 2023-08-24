@@ -8,6 +8,7 @@ using VisionCar.Application.Commands._Produto;
 using VisionCar.Application.Commands._Empresa;
 using VisionCar.Application.Commands.CreateCliente;
 using VisionCar.Application.Commands._Venda;
+using System;
 
 namespace VisionCar.API.Controllers
 {
@@ -48,12 +49,17 @@ namespace VisionCar.API.Controllers
             return Ok(cliente);
         }
         // api/Venda/Empresa/1
-        [HttpGet("Empresa/{idEmpresa}")]
-        public async Task<IActionResult> GetByIdEmpresa(int idEmpresa)
+        [HttpGet("Empresa/{idEmpresa}/{data}")]
+        public async Task<IActionResult> GetByIdEmpresa(int idEmpresa, DateTime data)
         {
             var query = new Application.Queries.QueriesVenda.GetVendaQuery(idEmpresa);
+            var query2 = new GetVendaQueryByData(idEmpresa,data);
+            System.Collections.Generic.List<Application.ViewModels.VendaViewModel> produto=null;
 
-            var produto = await _mediator.Send(query);
+            if(data>new DateTime(0))
+                produto = await _mediator.Send(query2);
+            else
+                produto = await _mediator.Send(query);
 
             if (produto == null)
             {

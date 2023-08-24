@@ -13,13 +13,19 @@ namespace VisionCar.Core.Entities
             IdEmpresa = idEmpresa;
             Descricao = descricao;
             Preco = preco;
+        //    PrecoGD=precogd;
             Ativo = ativo;
+        }
+       public Servico()
+        {
+
         }
 
         public int Id { get; set; }
         public int IdEmpresa { get; set; }
         public string Descricao { get; set; }
         public string Preco { get; set; }
+       // public string PrecoGD { get; set; }
         public bool Ativo { get; set; }
 
 
@@ -29,6 +35,7 @@ namespace VisionCar.Core.Entities
             IdEmpresa = idEmpresa;
             Descricao = descricao;
             Preco = preco;
+        //    PrecoGD = precogd;
             Ativo = ativo;
         }
     }

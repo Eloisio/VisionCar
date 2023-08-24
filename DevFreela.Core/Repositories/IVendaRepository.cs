@@ -10,6 +10,7 @@ namespace VisionCar.Core.Repositories
     {
         Task AddAsync(Venda venda);
         Task<List<Venda>> GetAllAsync(int id);
+        Task<List<Venda>> GetByDataAsync(int id,DateTime data);
         Task<Venda> GetByIdAsync( int id);
         Task DeleteAsync(Venda venda);
         Task SaveChangesAsync();

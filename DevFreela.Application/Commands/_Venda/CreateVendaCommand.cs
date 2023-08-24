@@ -18,5 +18,6 @@ namespace VisionCar.Application.Commands._Venda
         public bool Excluido { get; set; }
         public string Observacao { get; set; }
         public string Descricao { get; set; }
+        public string Placa { get; set; }
     }
 }

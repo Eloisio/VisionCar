@@ -117,7 +117,7 @@ namespace VisionCar.Infrastructure.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Preco")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -192,6 +192,9 @@ namespace VisionCar.Infrastructure.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Observacao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Placa")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Pago")

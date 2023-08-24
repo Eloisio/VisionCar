@@ -110,7 +110,8 @@ namespace VisionCar.Infrastructure.Persistence.Migrations
                     AvisarCliente = table.Column<bool>(type: "bit", nullable: false),
                     Excluido = table.Column<bool>(type: "bit", nullable: false),
                     Observacao = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                     Placa = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
