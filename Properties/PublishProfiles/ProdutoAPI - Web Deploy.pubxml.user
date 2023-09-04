@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Esse arquivo é usado pelo processo de publicação/pacote do seu projeto Web. É possível personalizar o comportamento deste processo
+ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAl/zC7Dvyk0COnIm+5KjzaAAAAAACAAAAAAAQZgAAAAEAACAAAABxxQS7spoVNbZ6AnwKvIjucoZAwnYgBaHSUFcL2kAWrAAAAAAOgAAAAAIAACAAAADYdzazt5izccoumzDG7UdMYW+DWEeaRZ0W5pk6ayV8NIAAAAAcZmOZKNZoadmnrPGxli9yrRAhH5wfsbyNDIbzzs9+zuhiPW0uKDprzWz8ouIP/2NGJn0OJSjGW6VMkYz0QCy8eK9ECWkzO6elP3GZ0ZXhs85Py3iQr1M9paWVgBpJaUhYG48od7UsHHDG5HJ1RfzTEjp1kd3TQW9j/qxRFzBeCkAAAADFAQom/wsvwnpCMvn3w2w/PafvL5ltXwuzdiQtYutr2SwMDY7/14m5vRYOqGMSrjI66dTKVFvzbA+QUsV7jRmC</EncryptedPassword>
+    <History>False|2023-08-28T03:28:08.0565813Z;True|2023-08-27T16:39:05.6452741-03:00;True|2023-08-27T16:31:21.0306966-03:00;True|2023-08-27T16:26:05.7617449-03:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="ProductAPI.Context.ProductContext">
+      <Value>Server=tcp:visioncar.database.windows.net,1433%3bInitial Catalog=DBVisionCar%3bPersist Security Info=False%3bUser ID=camposevolution%3bPassword=elo%40#7J81sah6#%40%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
